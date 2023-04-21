@@ -1,0 +1,118 @@
+@charset "UTF-8";
+
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contém tudo */
+.slider{
+    margin: 0 auto;
+    width: 800px;
+    height: 400px;
+    overflow: hidden;
+}
+
+.slides{
+    display: flex;
+    /* Vai ser 4x maior q a tag q contém as imagens */
+    width: 400%;
+    height: 400px;
+}
+.slides input{
+    display: none;
+}
+.slide{
+    /* tamaho das imagens em relação a tag div slides*/
+    width: 25%;
+    position: relative;
+}
+.slide img{
+    /* tamanho das imagens */
+    width: 800px;
+}
+
+/* Tag que contém os labels */
+.manual-navigation{
+    position: absolute;
+    width: 800px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+}
+
+/*Cada label*/
+.manual-btn{
+    border: 2px solid white;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .5s;
+}
+.manual-btn:not(:last-child){
+    margin-right: 40px; 
+}
+.manual-btn:hover{
+    background-color: white;
+}
+
+/* Quando o primeiro radio (radio1) estiver ativo a primeira imagem (first) vai ter zero de margem */
+#radio1:checked ~ .first{
+    margin-left: 0;
+}
+
+#radio2:checked ~ .first{
+    margin-left: -25%;
+}
+
+#radio3:checked ~ .first{
+    margin-left: -50%;
+}
+
+#radio4:checked ~ .first{
+    margin-left:-75%;
+}
+
+/*Vão ficar marcadas quando clicadas*/
+.navigation-auto div{
+    border: 2px solid blue;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.navigation-auto{
+    position: absolute;
+    width: 800px;
+    margin-top: 360px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Ficaram na mesma poição dos labels */
+.navigation-auto div:not(:last-child){
+    margin-right: 40px;
+}
+
+/* Quando selecionado deixar o fundo branco */
+#radio1:checked ~ .navigation-auto .auto-btn1{
+    background-color: white;
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2{
+    background-color: white;
+}
+
+#radio3:checked ~ .navigation-auto .auto-btn3{
+    background-color: white;
+}
+
+#radio4:checked ~ .navigation-auto .auto-btn4{
+    background-color: white;
+}
