@@ -31,6 +31,7 @@ body{
     /* tamaho das imagens em relação a tag div slides*/
     width: 25%;
     position: relative;
+    transition: 2s;
 }
 .slide img{
     /* tamanho das imagens */
